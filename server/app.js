@@ -5,11 +5,13 @@ const aiRoutes = require('./routes/ai');
 
 const app = express();
 app.use(cors());
+const gmailRoutes = require('./routes/gmail'); 
+
 
 // Routes
 app.use('/', aiRoutes);
+app.use('/', gmailRoutes);
 
-// ✅ Add this
 app.get('/', (req, res) => {
   res.send('✅ Smart Inbox backend is running!');
 });
